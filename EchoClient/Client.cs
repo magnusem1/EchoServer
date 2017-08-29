@@ -13,7 +13,7 @@ namespace EchoClient
         public void Start()
         {
             String SendStr = "Magnus";
-
+            
             using (TcpClient client = new TcpClient("localhost", 7))
             using (NetworkStream ns = client.GetStream())
             using (StreamReader sr = new StreamReader(ns))
@@ -24,6 +24,8 @@ namespace EchoClient
 
                 String incomingStr = sr.ReadLine();
                 Console.WriteLine("Echo Modtaget: " + incomingStr);
+
+
             }
         }
     }
