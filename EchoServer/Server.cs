@@ -27,12 +27,15 @@ namespace EchoServer
             using (StreamWriter sw = new StreamWriter(ns))
             {
                 string inline = sr.ReadLine();
-                sw.WriteLine(inline);
+
+                int countspaces = inline.Count(char.IsWhiteSpace);
+                countspaces++;
+
+                sw.WriteLine("Antal ord: " + countspaces);
                 sw.Flush();
             }
-
-            
-
         }
+
+
     }
 }
